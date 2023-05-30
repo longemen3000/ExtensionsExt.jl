@@ -26,8 +26,9 @@ function using_expr(expr,type::Symbol,has_ext::Bool)
                 return :(using ..($expr))
             end
         end
-
     end
+
+    calls_expr = Expr(:(:))
 
     if expr.head == :call
         mod = expr.args[2]
@@ -86,7 +87,7 @@ macro require_using(expr)
     has_ext = ExtensionsExt.has_extensions()
     _using_expr = using_expr(expr,:using,has_ext)
     return :($_using_expr) |> esc
-    
+
 end
 
 struct ExtensionError <: Exception
