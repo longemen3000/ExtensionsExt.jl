@@ -6,9 +6,9 @@ A package that defines some commonly used boilerplate using in extensions.
 
 There are different usecases that appeared during the transition to julia 1.9 extensions. We are going to use an hypothetical package, `Things.jl`, tho showcase how we can use `ExtensionsExt.jl` to address those usecases.
 
-## Case 0: only extending new methods, using Requires.jl
+### Case 0: only extending new methods, using Requires.jl
 
-This is the mayority of the cases. excluding `has_extension` and the `@require_X` macros, there is not much else to do, other than following the (julia documentation)[https://pkgdocs.julialang.org/dev/creating-packages/#Conditional-loading-of-code-in-packages-(Extensions)].`ExtensionsExt` helps on the boilerplate:
+This is the mayority of the cases. excluding `has_extension` and the `@require_X` macros, there is not much else to do, other than following the [julia documentation](https://pkgdocs.julialang.org/dev/creating-packages/#Conditional-loading-of-code-in-packages-(Extensions)).`ExtensionsExt` helps on the boilerplate:
 
 In our particular example, `Things.jl` loaded `Unitful.jl` via `Requires.jl` to extend `HotThing`
 
